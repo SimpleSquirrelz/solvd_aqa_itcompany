@@ -9,7 +9,8 @@ public class Phone {
         this.phoneNumber = "Phone number is missing";
     }
 
-    public Phone(String phoneNumber) {
+    public Phone(Long contactId, String phoneNumber) {
+        this.contactId = contactId;
         this.phoneNumber = phoneNumber;
     }
 
