@@ -12,10 +12,10 @@ import java.util.Optional;
 public class AddressDAOJDBC implements AddressDAO {
     @Override
     public List<Address> getContactAddresses(Long contactId) {
-        String selectAllOrdersQuery = "SELECT * FROM orders WHERE contact_id = ?;";
+        String selectAllAddressesQuery = "SELECT * FROM address WHERE contact_id = ?;";
         List<Address> addressList = new ArrayList<>();
         try (Connection connection = JDBCUtil.getConnection();
-             PreparedStatement statement = connection.prepareStatement(selectAllOrdersQuery)) {
+             PreparedStatement statement = connection.prepareStatement(selectAllAddressesQuery)) {
             statement.setLong(1, contactId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -31,11 +31,11 @@ public class AddressDAOJDBC implements AddressDAO {
 
     @Override
     public Address create(Address element) {
-        String insertOrderQuery = "INSERT INTO address (contact_id, country, city, street, building) VALUES (?, ?, ?, ?, ?);";
+        String insertAddressQuery = "INSERT INTO address (contact_id, country, city, street, building) VALUES (?, ?, ?, ?, ?);";
 
         try (Connection connection = JDBCUtil.getConnection();
              PreparedStatement statement
-                     = connection.prepareStatement(insertOrderQuery,
+                     = connection.prepareStatement(insertAddressQuery,
                      Statement.RETURN_GENERATED_KEYS)) {
             statement.setLong(1, element.getContactId());
             statement.setString(2, element.getCountry());
@@ -56,9 +56,9 @@ public class AddressDAOJDBC implements AddressDAO {
 
     @Override
     public Optional<Address> get(Long id) {
-        String selectOrderQuery = "SELECT * FROM address WHERE id = ?;";
+        String selectAddressQuery = "SELECT * FROM address WHERE id = ?;";
         try (Connection connection = JDBCUtil.getConnection();
-             PreparedStatement statement = connection.prepareStatement(selectOrderQuery)) {
+             PreparedStatement statement = connection.prepareStatement(selectAddressQuery)) {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -74,10 +74,10 @@ public class AddressDAOJDBC implements AddressDAO {
 
     @Override
     public List<Address> getAll() {
-        String selectAllOrdersQuery = "SELECT * FROM address;";
+        String selectAllAddressesQuery = "SELECT * FROM address;";
         List<Address> addressList = new ArrayList<>();
         try (Connection connection = JDBCUtil.getConnection();
-             PreparedStatement statement = connection.prepareStatement(selectAllOrdersQuery);
+             PreparedStatement statement = connection.prepareStatement(selectAllAddressesQuery);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
                 Address address = getAddressFromResultSet(resultSet);
@@ -92,9 +92,9 @@ public class AddressDAOJDBC implements AddressDAO {
 
     @Override
     public Address update(Address address) {
-        String updateOrderQuery = "UPDATE address SET contact_id = ?, country = ?, city = ?, street = ?, building = ? WHERE order_id = ?;";
+        String updateAddressQuery = "UPDATE address SET contact_id = ?, country = ?, city = ?, street = ?, building = ? WHERE id = ?;";
         try (Connection connection = JDBCUtil.getConnection();
-             PreparedStatement statement = connection.prepareStatement(updateOrderQuery)) {
+             PreparedStatement statement = connection.prepareStatement(updateAddressQuery)) {
             statement.setLong(1, address.getContactId());
             statement.setString(2, address.getCountry());
             statement.setString(3, address.getCity());
@@ -112,9 +112,9 @@ public class AddressDAOJDBC implements AddressDAO {
 
     @Override
     public boolean delete(Long id) {
-        String deleteOrderQuery = "DELETE FROM address WHERE id = ?;";
+        String deleteAddressQuery = "DELETE FROM address WHERE id = ?;";
         try (Connection connection = JDBCUtil.getConnection();
-             PreparedStatement statement = connection.prepareStatement(deleteOrderQuery)) {
+             PreparedStatement statement = connection.prepareStatement(deleteAddressQuery)) {
             statement.setLong(1, id);
             return statement.executeQuery().rowDeleted();
         } catch (SQLException e) {
