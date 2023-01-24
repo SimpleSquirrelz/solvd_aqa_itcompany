@@ -1,6 +1,7 @@
 package itcompany.model;
 
 public class User extends Contact {
+    private Long id;
     private String username;
     private String email;
     private String password;
@@ -17,6 +18,16 @@ public class User extends Contact {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {

@@ -5,14 +5,14 @@ import itcompany.model.Contact;
 import java.util.List;
 import java.util.Optional;
 
-public interface User extends GenericDAO<User, Long> {
+public interface UserDAO extends GenericDAO<UserDAO, Long> {
     Optional<Contact> getContact(Long contactId);
 
-    Optional<User> get(Long id);
+    Optional<UserDAO> get(Long id);
 
-    List<User> getAll();
+    List<UserDAO> getAll();
 
-    User update(User user);
+    UserDAO update(UserDAO user);
 
     boolean delete(Long id);
 }

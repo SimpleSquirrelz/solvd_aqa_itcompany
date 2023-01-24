@@ -41,6 +41,10 @@ public class Employee extends User {
         this.positions = positions;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public Long getId() {
         return id;
