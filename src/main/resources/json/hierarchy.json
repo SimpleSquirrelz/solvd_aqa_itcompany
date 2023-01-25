@@ -1,0 +1,51 @@
+{
+  "id": 1,
+  "project": {
+    "id": 1,
+    "name": "Super project",
+    "customer": {
+      "id": 1,
+      "user": {
+        "id": 1,
+        "username": "Username",
+        "email": "someemail@gmail.com",
+        "password": "password",
+        "contact": {
+          "id": 1,
+          "name": "MyNameIs",
+          "surname": "Eminem",
+          "addresses": [
+            {
+              "id": 1,
+              "contact_id": 1,
+              "country": "Estonia",
+              "city": "Tartu",
+              "street": "Raaya",
+              "building": 3
+            },
+            {
+              "id": 2,
+              "contact_id": 1,
+              "country": "Norway",
+              "city": "Oslo",
+              "street": "Akersgata",
+              "building": 2
+            }
+          ],
+          "phones": [
+            {
+              "id": 1,
+              "contact_id": 1,
+              "phone_number": "+372123232"
+            },
+            {
+              "id": 2,
+              "contact_id": 1,
+              "phone_number": "+3801232323"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
