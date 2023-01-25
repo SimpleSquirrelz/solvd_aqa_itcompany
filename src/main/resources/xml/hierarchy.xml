@@ -1,0 +1,48 @@
+<?xml version = "1.0"?>
+<contract>
+    <id>1</id>
+    <project>
+        <id>1</id>
+        <name>Super project</name>
+        <customer>
+            <id>1</id>
+            <user>
+                <id>1</id>
+                <username>Username</username>
+                <email>someemail@gmail.com</email>
+                <password>password</password>
+                <contact>
+                    <id>1</id>
+                    <name>MyNameIs</name>
+                    <surname>Eminem</surname>
+                    <address>
+                        <id>1</id>
+                        <contact_id>1</contact_id>
+                        <country>Estonia</country>
+                        <city>Tartu</city>
+                        <street>Raaya</street>
+                        <building>3</building>
+                    </address>
+                    <address>
+                        <id>2</id>
+                        <contact_id>1</contact_id>
+                        <country>Norway</country>
+                        <city>Oslo</city>
+                        <street>Akersgata</street>
+                        <building>2</building>
+                    </address>
+                    <phone>
+                        <id>1</id>
+                        <contact_id>1</contact_id>
+                        <phone_number>+372123232</phone_number>
+                    </phone>
+                    <phone>
+                        <id>2</id>
+                        <contact_id>1</contact_id>
+                        <phone_number>+3801232323</phone_number>
+                    </phone>
+                </contact>
+            </user>
+        </customer>
+    </project>
+</contract>
