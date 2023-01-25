@@ -9,6 +9,10 @@ public class Project {
     private List<Task> tasks;
     private String name;
 
+    public Project() {
+
+    }
+
     public Project(Customer customer, List<Employee> employees, List<Task> tasks, String name) {
         this.customer = customer;
         this.employees = employees;

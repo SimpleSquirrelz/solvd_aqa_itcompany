@@ -6,6 +6,9 @@ public class Contract {
     private Project project;
     private Employee employee;
 
+    public Contract() {
+    }
+
     public Contract(Customer customer, Project project, Employee employee) {
         this.customer = customer;
         this.project = project;

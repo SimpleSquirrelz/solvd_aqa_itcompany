@@ -26,24 +26,36 @@
                                                                 <xs:element name="id" type="xs:positiveInteger"/>
                                                                 <xs:element name="name" type="xs:string"/>
                                                                 <xs:element name="surname" type="xs:string"/>
-                                                                <xs:element name="address" maxOccurs="unbounded">
+                                                                <xs:element name="addresses">
                                                                     <xs:complexType>
                                                                         <xs:sequence>
-                                                                            <xs:element name="id" type="xs:positiveInteger"/>
-                                                                            <xs:element name="contact_id" type="xs:positiveInteger"/>
-                                                                            <xs:element name="country" type="xs:string"/>
-                                                                            <xs:element name="city" type="xs:string"/>
-                                                                            <xs:element name="street" type="xs:string"/>
-                                                                            <xs:element name="building" type="xs:string"/>
+                                                                            <xs:element name="address" maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="id" type="xs:positiveInteger"/>
+                                                                                        <xs:element name="contact_id" type="xs:positiveInteger"/>
+                                                                                        <xs:element name="country" type="xs:string"/>
+                                                                                        <xs:element name="city" type="xs:string"/>
+                                                                                        <xs:element name="street" type="xs:string"/>
+                                                                                        <xs:element name="building" type="xs:string"/>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
                                                                         </xs:sequence>
                                                                     </xs:complexType>
                                                                 </xs:element>
-                                                                <xs:element name="phone" maxOccurs="unbounded">
+                                                                <xs:element name="phones">
                                                                     <xs:complexType>
                                                                         <xs:sequence>
-                                                                            <xs:element name="id" type="xs:positiveInteger"/>
-                                                                            <xs:element name="contact_id" type="xs:positiveInteger"/>
-                                                                            <xs:element name="phone_number" type="xs:string"/>
+                                                                            <xs:element name="phone" maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="id" type="xs:positiveInteger"/>
+                                                                                        <xs:element name="contact_id" type="xs:positiveInteger"/>
+                                                                                        <xs:element name="phone_number" type="xs:string"/>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
                                                                         </xs:sequence>
                                                                     </xs:complexType>
                                                                 </xs:element>

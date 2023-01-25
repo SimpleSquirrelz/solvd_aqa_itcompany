@@ -4,6 +4,9 @@ package itcompany.xml;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
@@ -15,6 +18,18 @@ public class ParseXML {
     public static void main(String[] args) {
         boolean schemeIsValid = validateXMLSchema("hierarchy.xsd", "hierarchy.xml");
         System.out.println(schemeIsValid ? "Scheme is valid!" : "Something went wrong, check it once more");
+
+
+    }
+
+    public static void parseXML() {
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+
+        } catch (ParserConfigurationException | SAXException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static boolean validateXMLSchema(String xsdPath, String xmlPath){
