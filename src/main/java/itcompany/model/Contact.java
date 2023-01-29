@@ -25,7 +25,6 @@ public class Contact {
         this.surname = surname;
         this.phones.addAll(phones);
         this.addresses.addAll(addresses);
-
     }
 
     public void setId(Long id) {

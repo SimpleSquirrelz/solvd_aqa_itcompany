@@ -3,14 +3,17 @@ package itcompany;
 import itcompany.connection.ConnectionPool;
 import itcompany.connection.MainConnectionPool;
 import itcompany.model.Address;
+import itcompany.model.Contact;
 import itcompany.model.Phone;
 import itcompany.service.impl.AddressServiceImpl;
+import itcompany.service.impl.ContactServiceImpl;
 import itcompany.service.impl.PhoneServiceImpl;
 
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class Main {
@@ -24,7 +27,44 @@ public class Main {
         ConnectionPool connectionPool = MainConnectionPool.create(prop.getProperty("db.url"), (String) prop.get("db.user"), prop.getProperty("db.password"));
 
 //        validateAddressWorkflow();
-        validatePhoneWorkflow();
+//        validatePhoneWorkflow();
+
+        validateContactWorkflow();
+    }
+
+    public static void validateContactWorkflow() {
+        ContactServiceImpl contactService = new ContactServiceImpl();
+        contactService.getAll().forEach(System.out::println);
+
+        System.out.println("Creating new Contact with addresses and phones:");
+        Contact contact = contactService.create(new Contact("Supername", "Supersurname",
+                new ArrayList<Phone>() {
+            {
+                add(new Phone("+89123781293"));
+                add(new Phone("+89123781294"));
+                add(new Phone("+89123781296"));
+            }
+        }, new ArrayList<Address>() {
+            {
+                add(new Address());
+                add(new Address());
+            }
+        }));
+
+        System.out.println("\n\nCreated object:");
+        System.out.println(contact);
+
+        System.out.println("\n\nNew list of contacts .");
+        contactService.getAll().forEach(System.out::println);
+
+        contact.setSurname("Nuki");
+        System.out.println("\n\nUpdated contact");
+        System.out.println(contact);
+
+        System.out.println("DELETE contact WITH ID: " + contact.getId());
+        contactService.delete(contact.getId());
+        System.out.println("\n\nNew list of phone after delete op.");
+        contactService.getAll().forEach(System.out::println);
     }
 
     public static void validatePhoneWorkflow() {

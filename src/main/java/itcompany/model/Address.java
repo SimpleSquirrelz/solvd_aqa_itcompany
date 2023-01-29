@@ -24,6 +24,13 @@ public class Address {
         this.building = building;
     }
 
+    public Address(String country, String city, String street, String building) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.building = building;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
