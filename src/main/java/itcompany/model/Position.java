@@ -10,6 +10,9 @@ public class Position {
         this.name = name;
     }
 
+    public Position(){}
+
+
     public void setId(Long id) {
         this.id = id;
     }

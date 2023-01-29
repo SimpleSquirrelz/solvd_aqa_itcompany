@@ -1,6 +1,6 @@
 package itcompany.model;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Employee extends User {
@@ -10,7 +10,7 @@ public class Employee extends User {
 
     public Employee() {
         super();
-        positions = new HashSet<>();
+        positions = new LinkedHashSet<>();
         this.salary = 0.0f;
     }
 
@@ -19,7 +19,7 @@ public class Employee extends User {
         this.salary = salary;
     }
 
-    public Employee(HashSet<Position> positions, String name, String surname, String username, String email, String password, float salary) {
+    public Employee(LinkedHashSet<Position> positions, String name, String surname, String username, String email, String password, float salary) {
         super(name, surname, username, email, password);
         this.salary = salary;
         this.positions = positions;
@@ -56,12 +56,13 @@ public class Employee extends User {
                 "id='" + this.getId() + '\'' +
                 "name='" + this.getName() + '\'' +
                 ", surname='" + this.getSurname() + '\'' +
-                ", phones=" + this.getPhones().toString() +
-                ", addresses=" + this.getAddresses().toString() +
                 ", username='" + this.getUsername() + '\'' +
                 ", email='" + this.getEmail() + '\'' +
                 ", password='" + this.getPassword() + '\'' +
                 ", salary='" + this.getSalary() + '\'' +
+                ", \npositions=\n" + this.getPositions().toString() +
+                ", \nphones=\n" + this.getPhones().toString() +
+                ", \naddresses=\n" + this.getAddresses().toString() +
                 '}';
     }
 }

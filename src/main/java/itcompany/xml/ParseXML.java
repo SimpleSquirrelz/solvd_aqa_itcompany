@@ -1,12 +1,11 @@
 package itcompany.xml;
 
 
+import itcompany.model.Contract;
+import itcompany.model.Employee;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
@@ -19,17 +18,15 @@ public class ParseXML {
         boolean schemeIsValid = validateXMLSchema("hierarchy.xsd", "hierarchy.xml");
         System.out.println(schemeIsValid ? "Scheme is valid!" : "Something went wrong, check it once more");
 
+        parseXML();
 
     }
 
     public static void parseXML() {
-        try {
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser saxParser = factory.newSAXParser();
-
-        } catch (ParserConfigurationException | SAXException e) {
-            throw new RuntimeException(e);
-        }
+        String path = "src/main/resources/xml/hierarchy.xml";
+        EmployeeParserXML parserXML = new EmployeeParserXML();
+        Employee employee = parserXML.parse(path);
+        System.out.println(employee);
     }
 
     public static boolean validateXMLSchema(String xsdPath, String xmlPath){
