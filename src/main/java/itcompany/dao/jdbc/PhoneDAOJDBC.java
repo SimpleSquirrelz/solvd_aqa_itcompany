@@ -90,7 +90,7 @@ public class PhoneDAOJDBC implements PhoneDAO {
 
     @Override
     public Phone update(Phone phone) {
-        String updateAddressQuery = "UPDATE address SET contact_id = ?, phone_number = ? WHERE id = ?;";
+        String updateAddressQuery = "UPDATE phone SET contact_id = ?, phone_number = ? WHERE id = ?;";
         try (Connection connection = JDBCUtil.getConnection();
              PreparedStatement statement = connection.prepareStatement(updateAddressQuery)) {
             statement.setLong(1, phone.getContactId());
@@ -111,7 +111,7 @@ public class PhoneDAOJDBC implements PhoneDAO {
         try (Connection connection = JDBCUtil.getConnection();
              PreparedStatement statement = connection.prepareStatement(deleteAddressQuery)) {
             statement.setLong(1, id);
-            return statement.executeQuery().rowDeleted();
+            return statement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

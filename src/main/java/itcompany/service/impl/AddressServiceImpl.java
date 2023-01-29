@@ -1,6 +1,7 @@
 package itcompany.service.impl;
 
 import itcompany.dao.AddressDAO;
+import itcompany.dao.jdbc.AddressDAOJDBC;
 import itcompany.lib.Inject;
 import itcompany.lib.Service;
 import itcompany.model.Address;
@@ -12,8 +13,7 @@ import java.util.List;
 public class AddressServiceImpl implements AddressService {
 
     @Inject
-    private AddressDAO addressDao;
-
+    private AddressDAO addressDao = new AddressDAOJDBC();
 
     @Override
     public List<Address> getContactAddresses(Long id) {

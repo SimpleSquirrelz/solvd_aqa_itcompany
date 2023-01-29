@@ -112,11 +112,11 @@ public class AddressDAOJDBC implements AddressDAO {
 
     @Override
     public boolean delete(Long id) {
-        String deleteAddressQuery = "DELETE FROM address WHERE id = ?;";
+        String deleteAddressQuery = "DELETE FROM address WHERE id = ? ;";
         try (Connection connection = JDBCUtil.getConnection();
              PreparedStatement statement = connection.prepareStatement(deleteAddressQuery)) {
             statement.setLong(1, id);
-            return statement.executeQuery().rowDeleted();
+            return statement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
