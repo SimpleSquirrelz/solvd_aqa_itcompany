@@ -1,5 +1,10 @@
 package itcompany.model;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+@JsonTypeName("user")
 public class User extends Contact {
     private Long id;
     private String username;
@@ -30,6 +35,7 @@ public class User extends Contact {
         this.id = id;
     }
 
+    @JsonGetter("username")
     public String getUsername() {
         return username;
     }
@@ -38,6 +44,7 @@ public class User extends Contact {
         this.username = username;
     }
 
+    @JsonGetter("email")
     public String getEmail() {
         return email;
     }
@@ -46,6 +53,7 @@ public class User extends Contact {
         this.email = email;
     }
 
+    @JsonGetter("password")
     public String getPassword() {
         return password;
     }

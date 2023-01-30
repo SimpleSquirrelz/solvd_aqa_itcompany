@@ -1,9 +1,19 @@
 package itcompany.model;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonRootName(value = "contact")
+@JsonTypeName("contact")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = User.class, name = "user"),
+})
 public class Contact {
     private Long id;
     private String name;
@@ -29,6 +39,7 @@ public class Contact {
     }
 
     @XmlElement
+    @JsonGetter("id")
     public Long getId() {
         return id;
     }
@@ -38,6 +49,7 @@ public class Contact {
     }
 
     @XmlElement
+    @JsonGetter("name")
     public String getName() {
         return name;
     }
@@ -47,6 +59,7 @@ public class Contact {
     }
 
     @XmlElement
+    @JsonGetter("surname")
     public String getSurname() {
         return surname;
     }
@@ -56,6 +69,7 @@ public class Contact {
     }
 
     @XmlElement
+    @JsonGetter("phones")
     public List<Phone> getPhones() {
         return phones;
     }
@@ -65,6 +79,7 @@ public class Contact {
     }
 
     @XmlElement
+    @JsonGetter("addresses")
     public List<Address> getAddresses() {
         return addresses;
     }

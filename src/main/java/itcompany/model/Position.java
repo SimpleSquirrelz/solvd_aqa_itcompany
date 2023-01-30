@@ -1,7 +1,10 @@
 package itcompany.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 public class Position {
     private Long id;
+    @JsonAlias({"employee_id"})
     private Long employeeId;
     private String name;
 

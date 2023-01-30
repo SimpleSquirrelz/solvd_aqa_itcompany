@@ -4,49 +4,48 @@
   "positions": [
     {
       "id": 1,
-      "employeeId": 111,
+      "employee_id": 111,
       "name": "big boss"
     },
     {
       "id": 2,
-      "employeeId": 111,
+      "employee_id": 111,
       "name": "QA"
     }
   ],
   "username": "Username",
   "email": "someemail@gmail.com",
   "password": "password",
-
-    "name": "MyNameIs",
-    "surname": "Eminem",
-    "addresses": [
-      {
-        "id": 444,
-        "contactId": 333,
-        "country": "Estonia",
-        "city": "Tartu",
-        "street": "Raaya",
-        "building": 3
-      },
-      {
-        "id": 555,
-        "contactId": 333,
-        "country": "Norway",
-        "city": "Oslo",
-        "street": "Akersgata",
-        "building": 2
-      }
-    ],
-    "phones": [
-      {
-        "id": 666,
-        "contactId": 333,
-        "phoneNumber": "+372123232"
-      },
-      {
-        "id": 777,
-        "contactId": 333,
-        "phoneNumber": "+3801232323"
-      }
-    ]
+  "name": "MyNameIs",
+  "surname": "Eminem",
+  "addresses": [
+    {
+      "id": 444,
+      "contact_id": 333,
+      "country": "Estonia",
+      "city": "Tartu",
+      "street": "Raaya",
+      "building": 3
+    },
+    {
+      "id": 555,
+      "contact_id": 333,
+      "country": "Norway",
+      "city": "Oslo",
+      "street": "Akersgata",
+      "building": 2
+    }
+  ],
+  "phones": [
+    {
+      "id": 666,
+      "contact_id": 333,
+      "phone_number": "+372123232"
+    },
+    {
+      "id": 777,
+      "contact_id": 333,
+      "phone_number": "+3801232323"
+    }
+  ]
 }

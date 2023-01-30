@@ -1,5 +1,8 @@
 package itcompany.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonGetter;
+
 public class Phone {
     private Long id;
     private Long contactId;
@@ -18,6 +21,7 @@ public class Phone {
         this.phoneNumber = phoneNumber;
     }
 
+    @JsonGetter("phone_number")
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -30,10 +34,12 @@ public class Phone {
         this.id = id;
     }
 
+    @JsonGetter("id")
     public Long getId() {
         return id;
     }
 
+    @JsonGetter("contact_id")
     public Long getContactId() {
         return contactId;
     }

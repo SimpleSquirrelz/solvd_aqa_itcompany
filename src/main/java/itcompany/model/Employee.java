@@ -1,5 +1,8 @@
 package itcompany.model;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.LinkedHashSet;
@@ -7,6 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 @XmlRootElement
+@JsonTypeName("employee")
 public class Employee extends User {
     private Long id;
     private float salary;
@@ -38,6 +42,7 @@ public class Employee extends User {
     }
 
     @XmlElement
+    @JsonGetter("salary")
     public float getSalary() {
         return salary;
     }
@@ -47,6 +52,7 @@ public class Employee extends User {
     }
 
     @XmlElement
+    @JsonGetter("positions")
     public Set<Position> getPositions() {
         return positions;
     }
@@ -57,6 +63,7 @@ public class Employee extends User {
 
     @XmlElement
     @Override
+    @JsonGetter("id")
     public Long getId() {
         return id;
     }
