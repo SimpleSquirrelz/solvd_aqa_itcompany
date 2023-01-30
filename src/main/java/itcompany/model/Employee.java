@@ -1,8 +1,12 @@
 package itcompany.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
+@XmlRootElement
 public class Employee extends User {
     private Long id;
     private float salary;
@@ -25,6 +29,15 @@ public class Employee extends User {
         this.positions = positions;
     }
 
+    public Employee(List<Address> addressList, List<Phone> phoneList, LinkedHashSet<Position> positions, String name, String surname, String username, String email, String password, float salary) {
+        super(name, surname, username, email, password);
+        this.salary = salary;
+        this.positions = positions;
+        this.setPhones(phoneList);
+        this.setAddresses(addressList);
+    }
+
+    @XmlElement
     public float getSalary() {
         return salary;
     }
@@ -33,6 +46,7 @@ public class Employee extends User {
         this.salary = salary;
     }
 
+    @XmlElement
     public Set<Position> getPositions() {
         return positions;
     }
@@ -41,13 +55,14 @@ public class Employee extends User {
         this.positions = positions;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    @XmlElement
     @Override
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

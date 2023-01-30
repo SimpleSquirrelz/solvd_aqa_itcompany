@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee>
+    <addresses>
+        <building>3</building>
+        <city>Tartu</city>
+        <contactId>333</contactId>
+        <country>Estonia</country>
+        <id>444</id>
+        <street>Raaya</street>
+    </addresses>
+    <addresses>
+        <building>2</building>
+        <city>Oslo</city>
+        <contactId>333</contactId>
+        <country>Norway</country>
+        <id>444</id>
+        <street>Akersgata</street>
+    </addresses>
+    <name>MyNameIs</name>
+    <phones>
+        <contactId>333</contactId>
+        <id>666</id>
+        <phoneNumber>+372123232</phoneNumber>
+    </phones>
+    <surname>Eminem</surname>
+    <email>someemail@gmail.com</email>
+    <password>password</password>
+    <username>Username</username>
+    <positions>
+        <employeeId>1</employeeId>
+        <id>1</id>
+        <name>big boss</name>
+    </positions>
+    <positions>
+        <employeeId>2</employeeId>
+        <id>2</id>
+        <name>QA</name>
+    </positions>
+    <salary>2000.0</salary>
+</employee>

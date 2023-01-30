@@ -1,5 +1,6 @@
 package itcompany.model;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,14 +28,16 @@ public class Contact {
         this.addresses.addAll(addresses);
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    @XmlElement
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -43,6 +46,7 @@ public class Contact {
         this.name = name;
     }
 
+    @XmlElement
     public String getSurname() {
         return surname;
     }
@@ -51,6 +55,7 @@ public class Contact {
         this.surname = surname;
     }
 
+    @XmlElement
     public List<Phone> getPhones() {
         return phones;
     }
@@ -59,6 +64,7 @@ public class Contact {
         this.phones = phones;
     }
 
+    @XmlElement
     public List<Address> getAddresses() {
         return addresses;
     }
