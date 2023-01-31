@@ -1,4 +1,4 @@
-package itcompany.xml;
+package itcompany.xml.custom;
 
 import itcompany.model.*;
 import org.xml.sax.Attributes;

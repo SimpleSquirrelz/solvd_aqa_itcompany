@@ -1,4 +1,4 @@
-package itcompany.xml;
+package itcompany.xml.custom;
 
 import itcompany.model.Employee;
 import org.xml.sax.SAXException;

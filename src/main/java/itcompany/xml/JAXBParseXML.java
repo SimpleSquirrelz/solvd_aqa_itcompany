@@ -17,9 +17,13 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class JAXBParseXML {
-    public static void main(String[] args) throws JAXBException, FileNotFoundException {
-        generateXML();
-        parseXML();
+    public static void main(String[] args) {
+        try {
+            generateXML();
+            parseXML();
+        } catch (FileNotFoundException | JAXBException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void parseXML () throws JAXBException {

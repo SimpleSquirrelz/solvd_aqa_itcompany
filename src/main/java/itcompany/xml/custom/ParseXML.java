@@ -1,7 +1,6 @@
-package itcompany.xml;
+package itcompany.xml.custom;
 
 
-import itcompany.model.Contract;
 import itcompany.model.Employee;
 import org.xml.sax.SAXException;
 
@@ -19,7 +18,6 @@ public class ParseXML {
         System.out.println(schemeIsValid ? "Scheme is valid!" : "Something went wrong, check it once more");
 
         parseXML();
-
     }
 
     public static void parseXML() {
